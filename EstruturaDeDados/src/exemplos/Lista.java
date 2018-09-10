@@ -6,13 +6,13 @@ public class Lista {
     public void inserir(Integer elemento) {
         int posicaoDisponivel = 0;
 
-                for (int i = 0; i < elementos.length; i++){
-                    if (elementos[i] == null){
-                        posicaoDisponivel = i;
-                        break;
-                    }
-                }
-                elementos [posicaoDisponivel] = elemento;
+        for (int i = 0; i < elementos.length; i++){
+            if (elementos[i] == null){
+                posicaoDisponivel = i;
+                break;
+            }
+        }
+        elementos [posicaoDisponivel] = elemento;
     }
     public void inserirPorPosicao (int posicao, Integer elemento){
         elementos[posicao] = elemento;

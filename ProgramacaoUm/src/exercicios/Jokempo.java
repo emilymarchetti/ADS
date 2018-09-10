@@ -38,7 +38,7 @@ public class Jokempo {
         jogada = scan.nextInt();
 
         //if (jogada != 0 || jogada != 1 || jogada != 2){
-            //System.out.println("Jogada invalida! Tente novamente");}
+        //System.out.println("Jogada invalida! Tente novamente");}
 
         for (int i=0; i<50; i++) {
             System.out.println();

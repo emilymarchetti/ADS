@@ -15,7 +15,7 @@ public class CalculoIMC {
         System.out.println("Digite sua altura em metros");
         altura = scan.nextDouble();
 
-        imc = peso/(altura^2);
+        imc = peso/(altura*altura);
 
         if (imc < 17){
             System.out.println("Muito abaixo do peso");

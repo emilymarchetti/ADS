@@ -1,4 +1,4 @@
-﻿package exercicios;
+package exercicios;
 
 import java.util.Scanner;
 
@@ -35,9 +35,9 @@ public class Calculadora {
             case 4 :
                 System.out.println("O resultado é: "+divisao(valorUm,valorDois));
                 break;
-             default:
-                 System.out.println("Operação invalida! Por favor tente novamente.");
-                 break ;
+            default:
+                System.out.println("Operação invalida! Por favor tente novamente.");
+                break ;
         }
     }
 
@@ -54,3 +54,4 @@ public class Calculadora {
         return valorUm/valorDois;
     }
 }
+
