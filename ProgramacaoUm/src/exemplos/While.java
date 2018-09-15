@@ -1,4 +1,4 @@
-package loops;
+package exemplos;
 
 public class While {
 
