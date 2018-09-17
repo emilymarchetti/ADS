@@ -1,14 +1,11 @@
-package exemplos;
+package exercicios;
 
 // Armazenar 10 números reais e apresentar o maior e o menor
 
-import java.util.Scanner;
-
 public class MaiorMenor {
     public static void main (String [] args){
-        Scanner scan = new Scanner(System.in);
 
-        double[] num = new double[9];
+        double[] num = new double[10];
         num[0] = 1.5;
         num[1] = 2.5;
         num[2] = 3.5;
@@ -18,6 +15,7 @@ public class MaiorMenor {
         num[6] = 7.5;
         num[7] = 8.5;
         num[8] = 9.5;
+        num[10] = 10.5;
 
         double maior,menor;
 

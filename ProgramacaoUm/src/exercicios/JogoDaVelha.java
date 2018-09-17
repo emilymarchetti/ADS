@@ -5,9 +5,10 @@ import java.util.Scanner;
 
 public class JogoDaVelha {
     private static Character[][] velha = new Character[5][5];
-    private static int cont = 1;
+    private static int cont = 0;
     private static int jogada;
     private static boolean ganhador;
+    private static boolean empate;
     private static Random random = new Random();
     private static char jogadorUm,jogadorDois;
     public static void main(String[] args) {
@@ -27,6 +28,7 @@ public class JogoDaVelha {
 
         int escolha;
 
+        System.out.println();
         System.out.println("1 - Jogo local");
         System.out.println("2 - Jogar contra o computador");
         escolha = scan.nextInt();
@@ -34,10 +36,10 @@ public class JogoDaVelha {
         switch (escolha){
             case 1:
                 Local();
-            break;
+                break;
             case 2:
                 Computador();
-            break;
+                break;
             default:
                 System.out.println("Escolha invalida");
                 break;
@@ -76,13 +78,13 @@ public class JogoDaVelha {
         while   (ganhador == false){
             System.out.println("Jogador 1 escolha sua jogada");
             System.out.println();
+            cont++;
             Desenho();
             System.out.println();
             jogada = scan.nextInt();
             System.out.println();
             JogadaUm();
             System.out.println();
-            cont++;
             jogada = new Random().nextInt(9);
             JogadaDois();
             System.out.println();
@@ -93,13 +95,15 @@ public class JogoDaVelha {
             System.out.println("Jogador 2:");
             System.out.println();
             Desenho();
+            System.out.println();
             if (cont==10){
                 System.out.println("Deu velha :|");
+                break;
             }
         }
     }
 
-    //-------------------------------- LOCAL -------------------------------------------------//
+    //------------------------------------- LOCAL --------------------------------------------//
     private static void Local(){
 
         Scanner scan = new Scanner(System.in);
@@ -123,33 +127,41 @@ public class JogoDaVelha {
             System.out.println();
             System.out.println("Blz, o jogador 2 ficou com X");
         }else{
-            System.out.println("Jogada invalida! Tente novamente");
+            System.out.println("Peça invalida! Tente novamente");
         }
         System.out.println();
 
         ganhador = false;
+        empate = false;
 
         while   (ganhador == false){
+            cont++;
             System.out.println("Jogador 1 escolha sua jogada");
             System.out.println();
             Desenho();
-            System.out.println();
             jogada = scan.nextInt();
-            System.out.println();
             JogadaUm();
-            System.out.println();
-            System.out.println("Jogador 2 escolha sua jogada");
-            jogada = scan.nextInt();
-            Desenho();
-            System.out.println();
-            cont++;
-            JogadaDois();
-            System.out.println();
-            Desenho();
+            System.out.println("--------------------------------------------------------");
             GanhadorUm();
+            if (ganhador == true){
+                Desenho();
+                break;
+            }
+            if (empate == true){
+                System.out.println("Ops deu velha!");
+                Desenho();
+                break;
+            }
+            System.out.println("Jogador 2 escolha sua jogada");
+            System.out.println();
+            Desenho();
+            jogada = scan.nextInt();
+            System.out.println("--------------------------------------------------------");
+            JogadaDois();
             GanhadorDois();
-            if (cont==10){
-                System.out.println("Deu velha :|");
+            if (empate == true){
+                System.out.println("Ops deu velha!");
+                Desenho();
                 break;
             }
         }
@@ -158,7 +170,7 @@ public class JogoDaVelha {
     //------------------------------------- DESENHO ------------------------------------//
     private static void Desenho(){
 
-        if  (cont==1) {
+        if  (cont == 0) {
             for (int l = 0; l < velha.length; l++) {
                 for (int c = 0; c < velha.length; c++) {
                     if ((c == 1) || (c == 3)) {
@@ -195,23 +207,23 @@ public class JogoDaVelha {
 
     //--------------------------------------- JOGADA UM ------------------------------------//
     private static void JogadaUm(){
-        if (((velha[0][0] != 1) && (velha[0][0] != jogadorUm) && (velha[0][0] != jogadorDois) && (jogada == 1))){
+        if (velha[0][0] != 1 && velha[0][0] != jogadorUm && velha[0][0] != jogadorDois && jogada == 1){
             velha[0][0] = jogadorUm;
-        }else if (((velha[0][2] != 2) && (velha[0][2] != jogadorUm)) && (jogada == 2)) {
+        }else if (velha[0][2] != 2 && velha[0][2] != jogadorUm && velha[0][2] != jogadorDois && jogada == 2) {
             velha[0][2] = jogadorUm;
-        }else if ((velha[0][4] != 3 && velha[0][4] != jogadorUm) && (jogada == 3)) {
+        }else if (velha[0][4] != 3 && velha[0][4] != jogadorUm && velha[0][4] != jogadorDois && jogada == 3) {
             velha[0][4] = jogadorUm;
-        }else if ((velha[2][0] != 4 && velha[2][0] != jogadorUm) && (jogada == 4)) {
+        }else if (velha[2][0] != 4 && velha[2][0] != jogadorUm && velha[2][0] != jogadorDois && jogada == 4) {
             velha[2][0] = jogadorUm;
-        }else if ((velha[2][2] != 5 && velha[2][2] != jogadorUm) && (jogada == 5)) {
+        }else if (velha[2][2] != 5 && velha[2][2] != jogadorUm && velha[2][2] != jogadorDois && jogada == 5) {
             velha[2][2] = jogadorUm;
-        }else if ((velha[2][4] != 6 && velha[2][4] != jogadorUm) && (jogada == 6)) {
+        }else if (velha[2][4] != 6 && velha[2][4] != jogadorUm && velha[2][4] != jogadorDois && jogada == 6) {
             velha[2][4] = jogadorUm;
-        }else if ((velha[4][0] != 7 && velha[4][0] != jogadorUm) && (jogada == 7)) {
+        }else if (velha[4][0] != 7 && velha[4][0] != jogadorUm && velha[4][0] != jogadorDois && jogada == 7) {
             velha[4][0] = jogadorUm;
-        }else if (((velha[4][2] != 8) && (velha[4][2] != jogadorUm)) && (jogada == 8)) {
+        }else if (velha[4][2] != 8 && velha[4][2] != jogadorUm && velha[4][2] != jogadorDois && jogada == 8) {
             velha[4][2] = jogadorUm;
-        }else if (((velha[4][4] != 9) && (velha[4][4] != jogadorUm)) && (jogada == 9)) {
+        }else if (velha[4][4] != 9 && velha[4][4] != jogadorUm && velha[4][4] != jogadorDois && jogada == 9){
             velha[4][4] = jogadorUm;
         }else{
             System.out.println("Jogada invalida ou local já preenchido!");
@@ -219,24 +231,24 @@ public class JogoDaVelha {
     }
 
     //------------------------------------------ JOGADA DOIS -------------------------------------------//
-        private static void JogadaDois(){
-        if (((velha[0][0] != 1) && (velha[0][0] != jogadorUm) && (velha[0][0] != jogadorDois) && (jogada == 1))){
+    private static void JogadaDois(){
+        if (velha[0][0] != 1 && velha[0][0] != jogadorUm && velha[0][0] != jogadorDois && jogada == 1){
             velha[0][0] = jogadorDois;
-        }else if (((velha[0][2] != 2) && (velha[0][2] != jogadorUm)) && (jogada == 2)) {
+        }else if (velha[0][2] != 2 && velha[0][2] != jogadorUm && velha[0][2] != jogadorDois && jogada == 2) {
             velha[0][2] = jogadorDois;
-        }else if ((velha[0][4] != 3 && velha[0][4] != jogadorUm) && (jogada == 3)) {
+        }else if (velha[0][4] != 3 && velha[0][4] != jogadorUm && velha[0][4] != jogadorDois && jogada == 3) {
             velha[0][4] = jogadorDois;
-        }else if ((velha[2][0] != 4 && velha[2][0] != jogadorUm) && (jogada == 4)) {
+        }else if (velha[2][0] != 4 && velha[2][0] != jogadorUm && velha[2][0] != jogadorDois && jogada == 4) {
             velha[2][0] = jogadorDois;
-        }else if ((velha[2][2] != 5 && velha[2][2] != jogadorUm) && (jogada == 5)) {
+        }else if (velha[2][2] != 5 && velha[2][2] != jogadorUm && velha[2][2] != jogadorDois && jogada == 5) {
             velha[2][2] = jogadorDois;
-        }else if ((velha[2][4] != 6 && velha[2][4] != jogadorUm) && (jogada == 6)) {
+        }else if (velha[2][4] != 6 && velha[2][4] != jogadorUm && velha[2][4] != jogadorDois && jogada == 6) {
             velha[2][4] = jogadorDois;
-        }else if ((velha[4][0] != 7 && velha[4][0] != jogadorUm) && (jogada == 7)) {
+        }else if (velha[4][0] != 7 && velha[4][0] != jogadorUm && velha[4][0] != jogadorDois && jogada == 7) {
             velha[4][0] = jogadorDois;
-        }else if (((velha[4][2] != 8) && (velha[4][2] != jogadorUm)) && (jogada == 8)) {
+        }else if (velha[4][2] != 8 && velha[4][2] != jogadorUm && velha[4][2] != jogadorDois && jogada == 8) {
             velha[4][2] = jogadorDois;
-        }else if (((velha[4][4] != 9) && (velha[4][4] != jogadorUm)) && (jogada == 9)) {
+        }else if (velha[4][4] != 9 && velha[4][4] != jogadorUm && velha[4][4] != jogadorDois && jogada == 9) {
             velha[4][4] = jogadorDois;
         }else{
             System.out.println("Jogada invalida ou local já preenchido!");
@@ -269,8 +281,9 @@ public class JogoDaVelha {
         }else if((velha[2][0] == jogadorUm) && (velha[2][2] == jogadorUm) && (velha[2][4] == jogadorUm)) {
             System.out.println("Jogador 1 venceu!");
             ganhador = true;
+        }else if (velha [0][0] != '1' && velha [0][2] != '2' && velha [0][4] != '3' && velha [2][0] != '4' && velha [2][2] != '5' && velha [2][4] != '6' && velha [4][0] != '7' && velha [4][2] != '8' && velha [4][4] != '9'){
+            empate = true;
         }else{
-            System.out.println();
         }
     }
 
@@ -300,8 +313,9 @@ public class JogoDaVelha {
         }else if((velha[2][0] == jogadorDois) && (velha[2][2] == jogadorDois) && (velha[2][4] == jogadorDois)) {
             System.out.println("Jogador 2 venceu!");
             ganhador = true;
+        }else if (velha [0][0] != '1' && velha [0][2] != '2' && velha [0][4] != '3' && velha [2][0] != '4' && velha [2][2] != '5' && velha [2][4] != '6' && velha [4][0] != '7' && velha [4][2] != '8' && velha [4][4] != '9'){
+            empate = true;
         }else{
-            System.out.println();
         }
 
     }
