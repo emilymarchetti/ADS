@@ -1,39 +1,63 @@
 package exercicios;
 
-import java.util.Scanner;
-
 public class Lista {
+    private Integer[] lista = new Integer[10];
+    private int posicaoDisponivel = 0;
 
-    public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-
-        String maiorVinte = "";
-
-        for (int i = 0;i< 10;i++) {
-            System.out.println("Digite o elemento "+i+":");
-            lista[i]= scan.nextInt();
+    public void inserirPorPosicao (int posicao,int elemento){
+            lista[posicao] = elemento;
         }
-        ordeminversa();
-
-        //Dado uma lista de 10 elementos inteiros retorne todos elementos que são maior que 20
-
-        for (int i = 0; i < lista.length; i++){
-            if (lista[i] > 20){
-                maiorVinte = maiorVinte + lista[i] + " ";
+        public void inserirPorElemento (int elemento){
+                lista [posicaoDisponivel] = elemento;
+                posicaoDisponivel++;
+        }
+        public void removerPorPosicao (int posicao){
+                lista [posicao] = null;
+        }
+        public void removerPorElemento (int elemento){
+                for (int i = 0; i < lista.length; i++){
+                    if (lista[i] == elemento){
+                        lista [i] = null;
+                        break;
+                    }
+                }
+        }
+        public void retornarElementoPorPosicao (int posicao){
+            System.out.println(+lista[posicao]);
+        }
+        public int quantidadeElementos (){
+            int q = 0;
+            for (int i = 0; i < lista.length; i++){
+                if (lista[i] != null){
+                    q++;
+                }
+            }
+            return q;
+        }
+        public void listaCheia (){
+            if (posicaoDisponivel == lista.length){
+                System.out.println("Lista cheia!");
+            }else{
+                System.out.println("Lista não está cheia");
             }
         }
-        System.out.println("Maiores que 20: "+maiorVinte);
-    }
-    public static Integer[] lista = new Integer[10];
-
-    //Imprima 10 elementos de uma lista na ordem inversa
-
-    public static void ordeminversa (){
-        for (int i=9; i >= 0;i--){
-            System.out.println("Posição "+i+": "+lista[i]);
+        public void listaVazia (){
+            if (posicaoDisponivel == 0){
+                System.out.println("Lista vazia!");
+            }
         }
-
-
+        public void imprimirLista (){
+        for (int i= 0; i < lista.length; i++){
+            if (lista[i] != null){
+                System.out.println(lista[i]);
+            }
+        }
     }
 }
+
+
+
+
+
+
+

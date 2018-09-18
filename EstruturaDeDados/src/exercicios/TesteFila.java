@@ -12,5 +12,6 @@ public class TesteFila {
         fila.enfileirar(30);
         fila.enfileirar(40);
         fila.imprimir();
+        fila.proximo();
     }
 }
