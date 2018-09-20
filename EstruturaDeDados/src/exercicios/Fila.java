@@ -11,26 +11,40 @@ public class Fila {
     }
 
     public void imprimir() {
-        String print = "";
-        for (int i = 0; i < fila.length; i++) {
+        String print = "[ ";
+        for (int i = 0; i < proximaPosicao; i++) {
             if (fila[i] != null) {
                 print = print + fila[i] + " ";
             }
         }
-        System.out.println(print);
+        System.out.println(print +"]");
     }
 
     public void desenfilerar() {
-        for (int i = 0; i < fila.length - 1; i++) {
+        for (int i = 0; i < proximaPosicao - 1; i++) {
             fila[i] = fila[i + 1];
         }
-        fila[fila.length - 1] = null;
+        fila[proximaPosicao - 1] = null;
+        proximaPosicao--;
     }
 
-    public int retornarQuantidadeDeElementos() {
-        return proximaPosicao;
+    public void quantidadeDeElementos() {
+        System.out.println("Na fila contém "+proximaPosicao+" elementos");
     }
-    public Integer proximo(){
-        return fila[0];
+    public void proximo(){
+        System.out.println("O próximo da fila é "+fila[0]);
+    }
+    public void cheia(){
+        if (proximaPosicao == fila.length){
+            System.out.println("A fila está cheia");
+        }else{
+            System.out.println("A fila não está cheia ");
+        }
+    }public void vazia(){
+        if (proximaPosicao == 0){
+            System.out.println("A fila está vazia");
+        }else{
+            System.out.println("A fila não está vazia ");
+        }
     }
 }

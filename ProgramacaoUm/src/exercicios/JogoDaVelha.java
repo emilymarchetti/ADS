@@ -30,7 +30,7 @@ public class JogoDaVelha {
 
         System.out.println();
         System.out.println("1 - Jogo local");
-        System.out.println("2 - Jogar contra o computador");
+        System.out.println("2 - Jogar contra o computador (Beta)");
         escolha = scan.nextInt();
 
         switch (escolha){
@@ -86,6 +86,8 @@ public class JogoDaVelha {
             JogadaUm();
             System.out.println();
             jogada = new Random().nextInt(9);
+            //if (velha || jogada == "X" ){
+            //}
             JogadaDois();
             System.out.println();
             GanhadorUm();
@@ -205,7 +207,7 @@ public class JogoDaVelha {
         }
     }
 
-    //--------------------------------------- JOGADA UM ------------------------------------//
+    //-----------------1---------------------- JOGADA UM ------------------------------------//
     private static void JogadaUm(){
         if (velha[0][0] != 1 && velha[0][0] != jogadorUm && velha[0][0] != jogadorDois && jogada == 1){
             velha[0][0] = jogadorUm;
