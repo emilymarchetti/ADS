@@ -1,7 +1,5 @@
 package exercicios;
 
-// Armazenar 10 números reais e apresentar o maior e o menor
-
 public class MaiorMenor {
     public static void main (String [] args){
 

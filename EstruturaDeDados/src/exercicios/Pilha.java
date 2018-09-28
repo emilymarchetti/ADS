@@ -2,50 +2,61 @@ package exercicios;
 
 public class Pilha {
 
-    private Integer [] pilha = new Integer [20];
-    private Integer topo = null;
+    private Integer[] pilha = new Integer[10];
+    public Integer topo = null;
 
-    public void empilhar (Integer elemento){
-        if(topo == null) {
+    public void empilhar(Integer elemento) {
+        if (topo == null) {
             topo = 0;
+            pilha[topo++] = elemento;
+        } else if (topo == pilha.length -1) {
+            return;
         } else {
-            topo = topo + 1;
+            pilha[topo++] = elemento;
         }
-
-        if(topo >= pilha.length) {
-            System.out.println("");
-
-        }
-
-        pilha[topo] = elemento;
     }
-    public Integer desempilhar (){
-        if(topo == null) {
-            return null;
-        }
 
-        Integer elementoDesempilhado = pilha[topo];
-        pilha [topo] = null;
-        if(topo > 0) {
-            topo = topo - 1;
+    public void desempilhar() {
+        if (topo == null) {
+            return;
+        }
+        pilha[topo] = null;
+        if (topo > 0) {
+            topo--;
         } else {
             topo = null;
         }
-
-        return elementoDesempilhado;
     }
 
-    public void imprimir (){
-        String elementos = "[ ";
-
-        for (int i = 0; i < pilha.length; i++) {
+    public void imprimir() {
+        for (int i = topo; i >= 0; i--) {
             if (pilha[i] != null) {
-                elementos = elementos + pilha[i] + " ";
+                System.out.println("  " + pilha[i]);
+                System.out.println("-------");
             }
         }
+    }
 
-        elementos = elementos + "]";
+    public Integer retornarTopo (){
+        return pilha [topo];
+    }
+    public Integer quantidadeElementos() {
+        return topo + 1;
+    }
 
-        System.out.println(elementos);
+    public void cheia() {
+        if (topo == pilha.length) {
+            System.out.println("A pilha está cheia");
+        } else {
+            System.out.println("A pilha não está cheia");
+        }
+    }
+
+    public void vazia() {
+        if (topo == null) {
+            System.out.println("A pilha está vazia");
+        } else {
+            System.out.println("A pilha não está vazia");
+        }
     }
 }

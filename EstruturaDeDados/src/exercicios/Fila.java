@@ -28,23 +28,16 @@ public class Fila {
         proximaPosicao--;
     }
 
-    public void quantidadeDeElementos() {
-        System.out.println("Na fila contém "+proximaPosicao+" elementos");
+    public Integer quantidadeDeElementos() {
+        return proximaPosicao;
     }
-    public void proximo(){
-        System.out.println("O próximo da fila é "+fila[0]);
+    public Integer proximo(){
+        return fila[0];
     }
-    public void cheia(){
-        if (proximaPosicao == fila.length){
-            System.out.println("A fila está cheia");
-        }else{
-            System.out.println("A fila não está cheia ");
-        }
-    }public void vazia(){
-        if (proximaPosicao == 0){
-            System.out.println("A fila está vazia");
-        }else{
-            System.out.println("A fila não está vazia ");
-        }
+    public boolean cheia(){
+        return proximaPosicao == fila.length;
+    }
+    public boolean vazia(){
+        return proximaPosicao == 0;
     }
 }

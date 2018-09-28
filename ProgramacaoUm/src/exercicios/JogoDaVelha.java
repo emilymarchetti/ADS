@@ -1,7 +1,7 @@
 package exercicios;
 
-import java.util.Random;
-import java.util.Scanner;
+        import java.util.Random;
+        import java.util.Scanner;
 
 public class JogoDaVelha {
     private static Character[][] velha = new Character[5][5];
@@ -15,22 +15,23 @@ public class JogoDaVelha {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.println();
-        System.out.println("                Bem vindo(a) ao jogo da velha");
-        System.out.println();
-        System.out.println("|------------------------ REGRAS -------------------------|");
-        System.out.println();
-        System.out.println("- Escolha sua jogada com base no desenho abaixo");
-        System.out.println("- Pra fazer a escolha basta digitar o número de onde deseja");
-        System.out.println();
+//        System.out.println();
+//        System.out.println("                Bem vindo(a) ao jogo da velha");
+//        System.out.println();
+//        System.out.println("|------------------------ REGRAS -------------------------|");
+//        System.out.println();
+//        System.out.println("- Escolha sua jogada com base no desenho abaixo");
+//        System.out.println("- Pra fazer a escolha basta digitar o número de onde deseja");
+//        System.out.println();
 
         Desenho();
 
         int escolha;
 
         System.out.println();
+        System.out.println();
         System.out.println("1 - Jogo local");
-        System.out.println("2 - Jogar contra o computador (Beta)");
+        //System.out.println("2 - Jogar contra o computador (Beta)");
         escolha = scan.nextInt();
 
         switch (escolha){
@@ -62,12 +63,12 @@ public class JogoDaVelha {
             jogadorUm = 'X';
             jogadorDois = 'O';
             System.out.println();
-            System.out.println("Blz, o jogador 2 ficou com O");
+            //System.out.println("Blz, o jogador 2 ficou com O");
         }else if (peca==2){
             jogadorUm = 'O';
             jogadorDois = 'X';
             System.out.println();
-            System.out.println("Blz, o jogador 2 ficou com X");
+            //System.out.println("Blz, o jogador 2 ficou com X");
         }else{
             System.out.println("Jogada invalida! Tente novamente");
         }
@@ -92,7 +93,7 @@ public class JogoDaVelha {
             System.out.println();
             GanhadorUm();
             GanhadorDois();
-            System.out.println("--------------------------------------------------------");
+            //System.out.println("--------------------------------------------------------");
             System.out.println();
             System.out.println("Jogador 2:");
             System.out.println();
@@ -143,7 +144,7 @@ public class JogoDaVelha {
             Desenho();
             jogada = scan.nextInt();
             JogadaUm();
-            System.out.println("--------------------------------------------------------");
+            //System.out.println("--------------------------------------------------------");
             GanhadorUm();
             if (ganhador == true){
                 Desenho();
@@ -290,7 +291,7 @@ public class JogoDaVelha {
     }
 
     //---------------------------------------------- GANHADOR DOIS -------------------------------------//
-    private static void GanhadorDois(){
+    private static void GanhadorDois()  {
         if ((velha[0][0] == jogadorDois) && (velha[2][2] == jogadorDois) && (velha[4][4] == jogadorDois)){
             System.out.println("Jogador 2 venceu!");
             ganhador = true;
