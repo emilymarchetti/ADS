@@ -2,7 +2,7 @@ package bimestredois.exemplos;
 
 import java.util.Arrays;
 
-public class strings {
+public class Strings {
     public static void main(String[] args) {
 
         /*String nome = "Emily";
@@ -49,8 +49,13 @@ public class strings {
         String numeroDois = stringE.substring(4,8);
         System.out.println("Numero dois : "+numeroDois);*/
 
-        String nome = "Emily";
+        /*String nome = "Emily";
         System.out.println("Maiusculo: "+ nome.toUpperCase());
-        System.out.println("Minúsculo: "+ nome.toLowerCase());
+        System.out.println("Minúsculo: "+ nome.toLowerCase());*/
+
+        String nomeCompleto = "Faculdade Facec";
+        //String substituir = nomeCompleto.replace('e','i');
+        String substituir = nomeCompleto.replace("Facec","oi");
+        System.out.println("Caracter: "+ substituir);
     }
 }
