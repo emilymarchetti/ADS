@@ -1,4 +1,4 @@
-package bimestreum.exercicios;
+package exercicios;
 
 public class TestePilha {
     public static void main(String[] args) {

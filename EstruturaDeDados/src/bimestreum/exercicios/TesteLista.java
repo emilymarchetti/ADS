@@ -1,4 +1,4 @@
-package bimestreum.exercicios;
+package exercicios;
 
 public class TesteLista {
 

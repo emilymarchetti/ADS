@@ -1,4 +1,4 @@
-package bimestreum.exemplos;
+package exemplos;
 
 public class SomaDouble {
     public static void main (String [] args){
