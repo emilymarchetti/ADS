@@ -5,3 +5,8 @@
 src/exemplos/ExNotaAluno.java~HEAD
 ExNotaAluno.java
 README.md
+*.jpg
+*.png
+*.gif
+*.jpeg
+.nbproject
