@@ -1,5 +1,9 @@
 package Imobiliaria;
 
+import java.lang.annotation.Target;
+import java.util.ArrayList;
+import java.util.List;
+
 public class TesteUnitario {
 
     public static void main(String[] args) {
@@ -8,13 +12,13 @@ public class TesteUnitario {
         Endereco enderecoImovel = new Endereco("Av. Goiás",2250,"Centro",Cidade.JAPURA,Estado.PR);
         Endereco enderecoVendedor = new Endereco("Rua Joaquim Francisco",2250,"Centro",Cidade.APUCARANA,Estado.PR);
         PessoaFisica pessoa = new PessoaFisica("Jefinho","991711800",enderecoPessoa,"12344097988","Silva");
-        Imovel imovel = new Imovel(enderecoImovel,4,6,2,250000.00,250.00,"Venda");
+        Imovel imovel = new Imovel(enderecoImovel,4,6,2,250000.00,250.00,TipoImovel.VENDA,StatusImovel.DISPONIVEL);
         Vendedor vendedor = new Vendedor("Vitor","9964695748",enderecoVendedor,1300.00);
         Venda venda = new Venda (vendedor,pessoa,imovel);
         venda.calculoComissao();
 
         System.out.println("-*-*-*-*-*-*-*-*-* VENDA DE IMÓVEL -*-*-*-*-*-*-*-*-*-*-*");
-        System.out.println("Endereço do Imovel vendido: " + enderecoImovel.getRua()+", "+enderecoImovel.getNumero()+" - "
+        System.out.println("Endereço do Imovel vendido: " + enderecoImovel.getLogradouro()+", "+enderecoImovel.getNumero()+" - "
                             + enderecoImovel.getBairro() + " - " + enderecoImovel.getCidade()+"-" + enderecoImovel.getEstado() +"\n" +
                             "---Descrição do imóvel---\n" +
                             "Quantidade de banheiros: " + imovel.getBanheiro() + "\n" +
@@ -39,11 +43,11 @@ public class TesteUnitario {
         Endereco enderecoPessoaAluquel = new Endereco("Rua das Couves",123,"Horta",Cidade.UMUARAMA,Estado.PR);
         PessoaJuridica paluguel = new PessoaJuridica("Hamilton","1234-5678", enderecoPessoaAluquel,"1234567890123");
         Endereco enderecoImovelAluguel = new Endereco("Rua Ceci",456,"Bicicleta",Cidade.CIANORTE,Estado.PR);
-        Imovel imovelAluguel = new Imovel(enderecoImovelAluguel,4,0,0,5000.00,500.00,"Aluguel");
+        Imovel imovelAluguel = new Imovel(enderecoImovelAluguel,4,0,0,5000.00,500.00,TipoImovel.ALUGUEL, StatusImovel.DISPONIVEL);
         Aluguel aluguel = new Aluguel(imovelAluguel,4,paluguel);
 
         System.out.println("-*-*-*-*-*-*-*-*-* ALUGUEL DE IMÓVEL -*-*-*-*-*-*-*-*-*-*-*");
-        System.out.println("Endereço do Imovel Alugado: " + enderecoImovelAluguel.getRua()+", "+enderecoImovelAluguel.getNumero()+" - "
+        System.out.println("Endereço do Imovel Alugado: " + enderecoImovelAluguel.getLogradouro()+", "+enderecoImovelAluguel.getNumero()+" - "
                 + enderecoImovelAluguel.getBairro() + " - " + enderecoImovelAluguel.getCidade()+"-" + enderecoImovelAluguel.getEstado() +"\n" +
                 "---Descrição do imóvel---\n" +
                 "Quantidade de banheiros: " + imovelAluguel.getBanheiro() + "\n" +
@@ -52,7 +56,7 @@ public class TesteUnitario {
                 "Metragem: " + imovelAluguel.getTamanho() + "m²\n" +
                 "Inquilino: " + paluguel.getNome()+ "\n" +
                 "CNPJ: " + paluguel.getCnpj() +"\n"+
-                "Valor do Aluguel: R$"+ aluguel.getImovel().getPreco() + " mensais \n" +
+                "Valor do TestAluguel: R$"+ aluguel.getImovel().getPreco() + " mensais \n" +
                 "Duração do contrato: " + aluguel.getDuracaoContrato() + " anos"
         );
     }
