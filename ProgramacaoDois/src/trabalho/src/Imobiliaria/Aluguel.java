@@ -1,5 +1,7 @@
 package Imobiliaria;
 
+import java.math.BigDecimal;
+
 public class Aluguel{
     private int duracaoContrato;
     private Pessoa pessoa;
@@ -9,6 +11,10 @@ public class Aluguel{
         this.pessoa = pessoa;
         this.duracaoContrato = duracaoContrato;
         this.imovel = imovel;
+    }
+
+    public void alugar(){
+        imovel.setStatus(StatusImovel.ALUGADO);
     }
 
     public int getDuracaoContrato() {
@@ -22,4 +28,5 @@ public class Aluguel{
     public Imovel getImovel() {
         return imovel;
     }
+
 }
