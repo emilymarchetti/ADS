@@ -16,7 +16,7 @@ public class Endereco {
         this.estado = estado;
     }
 
-    public String getLogradouro() {
+    public String getRua() {
         return logradouro;
     }
 
@@ -34,10 +34,5 @@ public class Endereco {
 
     public Estado getEstado() {
         return estado;
-    }
-
-    @Override
-    public String toString(){
-        return getLogradouro() + ", " + getNumero() + " - " + getBairro() + ", " + getCidade() + "/" + getEstado();
     }
 }
