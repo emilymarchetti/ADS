@@ -1,10 +1,6 @@
 *.class
 *.xml
-.idea/.name
 *.iml
-src/exemplos/ExNotaAluno.java~HEAD
-ExNotaAluno.java
-README.md
 *.jpg
 *.png
 *.gif
@@ -13,3 +9,4 @@ README.md
 *.asta
 *.db
 *.js
+*.txt
