@@ -6,7 +6,7 @@ drop table if exists projeto cascade;
 drop table if exists trabalha_em cascade;
 drop table if exists dependente cascade;
 
--- 1) Criar FuncionÃ¡rio
+-- 1) Criar Funcionário
 create table funcionario (
     primeiro_nome varchar(15) not null,
     nome_meio char,
@@ -33,7 +33,7 @@ create table departamento (
         references funcionario(cpf)
 );
 
--- 3) incluir os funcionÃ¡rios
+-- 3) incluir os funcionários
 insert 
     into funcionario (primeiro_nome, nome_meio, ultimo_nome, cpf, dt_nascimento, endereco, sexo, salario, cpf_supervisor, num_depto, ativo) 
 values 
@@ -44,7 +44,7 @@ values
     ('Arnaldo', 'D', 'Silva', '88070527927', '1998-01-19', 'Rua Espirito Santo (298)', 'M', 1800, '98765432112', 1,1),
     ('Ana', 'E', 'Ferreira', '02735545903', '2006-02-24', 'Rua Primeiro de Maio', 'F', 9000, '98765432112', 2,1),
     ('Maria', 'F', 'Aparecida', '56510547902', '1996-11-06', 'Rua Santa Rita', 'F', 1500, '02735545903', 2,1),
-    ('JosÃ©', 'G', 'Serante', '95782883952', '1996-10-27', 'Avenida Goias', 'M', 1500, '02735545903', 2,1),
+    ('José', 'G', 'Serante', '95782883952', '1996-10-27', 'Avenida Goias', 'M', 1500, '02735545903', 2,1),
     ('Alfredo', 'B', 'Soares', '30801450977', '1991-10-23', 'Rua Das Flores', 'M', 1500, '02735545903', 2,0),
     ('Paulo', 'A', 'Filho', '33005893987', '1997-05-12', 'Rua Mato Grosso', 'M', 1750, '02735545903', 2,1),
     ('Diego', 'O', 'Ferreira', '92386274950', '1972-10-18', 'Rua Treze De Maio', 'M', 10500, '98765432112', 3,1),
@@ -53,15 +53,15 @@ values
     ('Heverton', null, 'Machado', '53200589930', '1996-04-07', 'Avenida Bahia', 'M', 2150, '92386274950', 3,1),
     ('Henrique', 'P', 'Duarte', '67340385991', '1985-04-10', 'Rua Sete de Setembro', 'M', 1900, '92386274950', 3,1),
     ('Mario', 'Z', 'Vargas', '09421362926', '1987-05-25', 'Avenida Sao Pedro', 'M', 1850, '92386274950', 3,1),
-    ('Jessica', 'S', 'Lins', '90139762981', '2004-08-11', 'Rua SÃ£o JosÃ©', 'F', 1500, '92386274950', 3,0),
-    ('Lorena', null, 'Ribeiro', '26245505933', '1994-10-20', 'Rua SÃ£o Paulo', 'F', 1500, '92386274950', 3,1),
-    ('Janete', 'F', 'GonÃ§alvez', '58609404919', '1992-03-06', 'Avenida Amazonas', 'F', 1300, '92386274950', 3,1),
+    ('Jessica', 'S', 'Lins', '90139762981', '2004-08-11', 'Rua São José', 'F', 1500, '92386274950', 3,0),
+    ('Lorena', null, 'Ribeiro', '26245505933', '1994-10-20', 'Rua São Paulo', 'F', 1500, '92386274950', 3,1),
+    ('Janete', 'F', 'Gonçalvez', '58609404919', '1992-03-06', 'Avenida Amazonas', 'F', 1300, '92386274950', 3,1),
     ('Thiago', 'C', 'Trindade', '98463859941', '1998-05-10', 'Rua Duque De Caxias', 'M', 1300, '92386274950', 3,1),
     ('Alan', 'A', 'Oliveira', '91263853941', '1986-07-25', 'Avenida das Flores', 'M', 5000, '98765432112', 4,1),
     ('Diego', null, 'Saturnino', '97463853142', '1999-05-10', 'Rua Cristovao Colombo', 'M', 1800, '91263853941', 4,1),
-    ('Elias', 'T', 'Oliveira', '12483285902', '1997-11-21', 'Rua Dante Luiz JÃºnior', 'M', 5000, '98765432112', 5,1),
+    ('Elias', 'T', 'Oliveira', '12483285902', '1997-11-21', 'Rua Dante Luiz Júnior', 'M', 5000, '98765432112', 5,1),
     ('Kevin', 'I', 'Caldeira', '40019248970', '1993-10-15', 'Rua Assobiador-do-Castanhal', 'M', 2250, '12483285902', 5,1),
-    ('Lorenzo', 'R', 'Moura', '68635802926', '1994-08-25', 'Rua ParaÃ­ba', 'M', 2200, '12483285902', 5,1),
+    ('Lorenzo', 'R', 'Moura', '68635802926', '1994-08-25', 'Rua Paraíba', 'M', 2200, '12483285902', 5,1),
     ('Jorge', 'C', 'Assis', '78577572927', '1994-05-02', 'Rua Leiteiro', 'M', 2550, '12483285902', 5,1),
     ('Murilo', 'D', 'da Costa', '58958722983', '1988-03-17', 'Rua Valeriana da Cunha Ribas', 'M', 2650, '12483285902', 5,1)
 ;
@@ -71,14 +71,14 @@ insert
     into departamento (nome_departamento, num_depto, cpf_gerente, data_inicio_gerente)
 values
     ('Matriz', 1, '98765432112', '2003-04-20'),
-    ('AdministraÃ§Ã£o', 3, '92386274950', '2007-06-30'),
+    ('Administração', 3, '92386274950', '2007-06-30'),
     ('Financeiro', 2, '02735545903', '2008-05-16'),
     ('TI', 4, '91263853941', '2010-06-22'),
     ('Comercial', 5, '12483285902', '2003-05-01'),
     ('Auditoria', 6, '98765432112', '2008-06-21')    
 ;
 
--- 5) incluir as chaves estrangeiras na tabela funcionÃ¡rio
+-- 5) incluir as chaves estrangeiras na tabela funcionário
 ALTER TABLE funcionario 
     ADD CONSTRAINT funcionario_supervisor_fk 
         FOREIGN KEY (cpf_supervisor) REFERENCES funcionario(cpf);
@@ -86,7 +86,7 @@ ALTER TABLE funcionario
     ADD CONSTRAINT funcionario_departamento_fk 
         FOREIGN KEY (num_depto) REFERENCES departamento(num_depto);
 
--- 6) criar tabela localizaÃ§Ãµes departamento
+-- 6) criar tabela localizações departamento
 create table localizacoes_departamento (
     num_depto int not null,
     local varchar(15),
@@ -94,7 +94,7 @@ create table localizacoes_departamento (
     foreign key (num_depto) references departamento(num_depto)
 );
 
--- 7) Insert LocalizaÃ§Ãµes
+-- 7) Insert Localizações
 insert into 
     localizacoes_departamento (num_depto, local)
 values
@@ -125,11 +125,11 @@ values
     ('ProdutoX', 1, 'Cianorte', 1),
     ('ProdutoY', 2, 'Cianorte', 1),
     ('ProdutoZ', 3, 'Cianorte', 1),
-    ('Software para AdmnistraÃ§Ã£o', 10, 'Cianorte', 4),
+    ('Software para Admnistração', 10, 'Cianorte', 4),
     ('Software para Envio de Guias Financeiro', 20, 'Cianorte', 4),
-    ('AutomaÃ§Ã£o de envio de relatÃ³rios', 30, 'Maringa', 4),
+    ('Automação de envio de relatórios', 30, 'Maringa', 4),
     ('Levantar Contas a Receber de Clientes', 31, 'Cianorte', 2),
-    ('ReorganizaÃ§Ã£o', 32, 'Cianorte', 3)
+    ('Reorganização', 32, 'Cianorte', 3)
 ;
 
 -- 10) Cria tabela trabalha_em
