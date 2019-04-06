@@ -10,3 +10,4 @@
 *.db
 *.js
 *.txt
+*.kotlin_module
