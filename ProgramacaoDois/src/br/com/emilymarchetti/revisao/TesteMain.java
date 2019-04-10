@@ -25,7 +25,13 @@ public class TesteMain {
 
         System.out.println("Status Locação: " + locacao.getStatus());
 
+        Locacao locacaoTeste = new Locacao(veiculo,cliente,LocalDate.of(2019,2,3),
+                LocalDate.of(2018,2,6));
+
+
         locacao.fazerEntrega(entrega);
+
+        //locacao.cancelarLocacao();
 
         System.out.println("Valor final da entrega: " + entrega.getValorTotal() +
                 "\n Status Locação: " + locacao.getStatus());

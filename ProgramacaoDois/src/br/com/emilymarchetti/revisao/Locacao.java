@@ -47,7 +47,7 @@ public class Locacao extends Data {
 
     public void cancelarLocacao(){
         if (getStatus() == StatusLocacao.FECHADA){
-            throw new RuntimeException("A locação já está fechada!");
+            throw new LocacaoFechadaException();
         }
             setStatus(StatusLocacao.CANCELADA);
             veiculo.disponibilizar(BigDecimal.valueOf(2000));

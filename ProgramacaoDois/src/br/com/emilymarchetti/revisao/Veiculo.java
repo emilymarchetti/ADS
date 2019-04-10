@@ -36,7 +36,7 @@ public class Veiculo {
         if (isDisponivel()) {
             setDisponivel(false);
         } else {
-            throw new RuntimeException();
+            throw new VeiculoIndisponivelException();
         }
     }
 
