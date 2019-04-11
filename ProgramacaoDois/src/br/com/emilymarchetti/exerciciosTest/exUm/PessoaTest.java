@@ -1,11 +1,11 @@
 /*package br.com.emilymarchetti.exerciciosTest.exUm;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.Teste;
 
 public class PessoaTest {
 
-    @Test
+    @Teste
     public void mudarNomePessoa(){
         Pessoa pessoa = new Pessoa("Emily","12344097988","22/10/2000");
         pessoa.setNome("João");
