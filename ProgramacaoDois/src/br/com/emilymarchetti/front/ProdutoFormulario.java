@@ -12,6 +12,7 @@ public class ProdutoFormulario {
     private JButton botaoLimpar;
     private Produto produto = new Produto();
 
+
     public JPanel getPanel() {
         return panel;
     }
@@ -20,13 +21,13 @@ public class ProdutoFormulario {
             botaoImprimir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (((campoTexto.getText().equals(null) && campoTexto.getText().equals("") ) && (campoCodigo.getText() != null) && (campoCodigo.getText() != ""))){
+                    if(campoTexto.getText().isEmpty() || campoCodigo.getText().isEmpty()){
+                        throw new CampoVazioException();
+                    }
                     produto.setCodigo(campoCodigo.getText());
                     produto.setNome(campoTexto.getText());
-                    JOptionPane.showMessageDialog(null, produto.toString(),"Informação do Produto",1);
-                }else{
-                    throw new RuntimeException();
-                }
+                    JOptionPane.showMessageDialog(null, produto.toString(),
+                            "Informação do Produto",1);
                 }
         });
             botaoLimpar.addActionListener(new ActionListener() {
