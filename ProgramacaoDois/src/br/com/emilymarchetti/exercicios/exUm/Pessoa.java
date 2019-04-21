@@ -1,4 +1,4 @@
-package br.com.emilymarchetti.exerciciosTest.exUm;
+package br.com.emilymarchetti.exercicios.exUm;
 
 public class Pessoa {
 

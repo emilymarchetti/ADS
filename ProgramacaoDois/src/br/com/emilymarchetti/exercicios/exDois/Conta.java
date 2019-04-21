@@ -1,6 +1,6 @@
-package br.com.emilymarchetti.exerciciosTest.exDois;
+package br.com.emilymarchetti.exercicios.exDois;
 
-import br.com.emilymarchetti.exerciciosTest.exUm.Pessoa;
+import br.com.emilymarchetti.exercicios.exUm.Pessoa;
 
 public class Conta {
 

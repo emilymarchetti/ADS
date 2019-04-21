@@ -1,4 +1,4 @@
-package br.com.emilymarchetti.front;
+package br.com.emilymarchetti.front.produtoFormulario;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

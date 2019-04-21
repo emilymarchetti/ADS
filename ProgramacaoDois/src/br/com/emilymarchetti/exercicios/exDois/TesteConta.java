@@ -1,4 +1,4 @@
-/*package br.com.emilymarchetti.exerciciosTest.exDois;
+/*package br.com.emilymarchetti.exercicios.exDois;
 
 import Pessoa;
 import org.junit.Assert;

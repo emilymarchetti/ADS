@@ -1,4 +1,4 @@
-/*package br.com.emilymarchetti.exerciciosTest.exUm;
+/*package br.com.emilymarchetti.exercicios.exUm;
 
 import org.junit.Assert;
 import org.junit.Teste;
