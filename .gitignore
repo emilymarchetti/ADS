@@ -11,3 +11,9 @@
 *.js
 *.txt
 *.kotlin_module
+*.pdf
+*.docx
+*.doc
+*.odt
+*.xlsx
+*.bak
