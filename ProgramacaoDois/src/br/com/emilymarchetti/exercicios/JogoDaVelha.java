@@ -1,7 +1,8 @@
-package exercicios;
 
-        import java.util.Random;
-        import java.util.Scanner;
+package br.com.emilymarchetti.exercicios;
+
+import java.util.Random;
+import java.util.Scanner;
 
 public class JogoDaVelha {
     private static Character[][] velha = new Character[5][5];
@@ -14,8 +15,9 @@ public class JogoDaVelha {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+
         System.out.println();
-        System.out.println("              Bem vindo(a) ao jogo da velha");
+        System.out.println("                Bem vindo(a) ao jogo da velha");
         System.out.println();
         System.out.println("|------------------------ REGRAS -------------------------|");
         System.out.println();
@@ -27,7 +29,9 @@ public class JogoDaVelha {
 
         int escolha;
 
-        System.out.println("\n\n1 - Jogo local");
+        System.out.println();
+        System.out.println();
+        System.out.println("1 - Jogo local");
         System.out.println("2 - Jogar contra o computador (Beta)");
         escolha = scan.nextInt();
 
@@ -60,12 +64,12 @@ public class JogoDaVelha {
             jogadorUm = 'X';
             jogadorDois = 'O';
             System.out.println();
-            System.out.println("Blz, o jogador 2 ficou com O");
+            System.out.println("Blz, o computador ficou com O");
         }else if (peca==2){
             jogadorUm = 'O';
             jogadorDois = 'X';
             System.out.println();
-            System.out.println("Blz, o jogador 2 ficou com X");
+            System.out.println("Blz, o  computador ficou com X");
         }else{
             System.out.println("Jogada invalida! Tente novamente");
         }

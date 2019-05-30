@@ -2,11 +2,11 @@
 
 import Pessoa;
 import org.junit.Assert;
-import org.junit.Teste;
+import org.junit.TesteFor;
 
 public class TesteConta {
 
-    @Teste
+    @TesteFor
 
     public void testeDeposito (){
         Pessoa pessoa = new Pessoa("Emily","12344097988","22/10/2000");
@@ -15,7 +15,7 @@ public class TesteConta {
         Assert.assertEquals(20,conta.getSaldo());
     }
 
-    @Teste
+    @TesteFor
     public void testeSaque(){
         Pessoa pessoa = new Pessoa("Emily","12344097988","22/10/2000");
         Conta conta = new Conta(pessoa,"125497",TipoConta.POUPANCA);
@@ -24,7 +24,7 @@ public class TesteConta {
         Assert.assertEquals(100,conta.getSaldo());
     }
 
-    //@Teste(expected = RuntimeException.class)
+    //@TesteFor(expected = RuntimeException.class)
     public void testeSaqueErro(){
         Pessoa pessoa = new Pessoa("Emily","12344097988","22/10/2000");
         Conta conta = new Conta(pessoa,"125497",TipoConta.CORRENTE);

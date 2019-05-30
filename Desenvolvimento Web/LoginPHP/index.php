@@ -1,18 +1,13 @@
 <?php
 include ("header.php");
 ?>
-<div id="formulario">
+<div id="inicio">
     <?php
-    if (isset($_COOKIE['login'])) {
-        $login_cookie = $_COOKIE['login'];
-        echo"<h1>Bem-vindo, $login_cookie </h1>";
-        echo"<p>Essas informações PODEM ser acessadas por você</p>";
-        include ("listausuario.php");
-    } else {
-        echo"<h1>Bem-vindo, convidado </h1>";
-        echo"<p>Essas informações infelizmente não podem ser acessadas por você</p>";
-        echo"<p><a href='login.php'>Faça login</a> para ter acesso</p>";
-    }
+        //echo"<h1>Bem-vindo(a), $login_cookie </h1>";
+		//echo"<script language='javascript' type='text/javascript'>"
+        //. "confirm('Deseja cadastrar um novo conteudo?');window.location.href='cadastroConteudo.php';</script>";
+        include ("conteudo.php");
+	
     ?>
 </div>        
 </body>

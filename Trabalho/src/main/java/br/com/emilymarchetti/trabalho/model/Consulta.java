@@ -7,11 +7,19 @@ public class Consulta extends DadosConsulta{
     private String sintomas;
     private String prescricaoMedica;
 
+    public Consulta(Paciente paciente, Medico medico, String sintomas) {
+        super(paciente, medico, LocalDateTime.now());
+        this.sintomas = sintomas;
+    }
+
+    public Consulta(Agendamento agendamento, String sintomas) {
+        super(agendamento.getPaciente(), agendamento.getMedico(), LocalDateTime.now());
+        this.sintomas = sintomas;
+    }
 
 
-    protected void agendarRetorno(LocalDateTime dataHora){
-        Consulta consulta = new Consulta();
-        consulta.setDataHora(dataHora);
+    protected void agendarRetorno(LocalDateTime dataHora, Consulta consulta){
+        Agendamento agendamento = new Agendamento(consulta.getPaciente(),consulta.getMedico(),dataHora);
     }
 
     public String getSintomas() {

@@ -5,13 +5,12 @@
 <title>Rainbow Clothes</title>
 <link href="estilo.css" rel="stylesheet"/>
 <script src="jquery-1.7.2.min.js"></script>
-<link href="css/jquery.lightbox-0.5.css" rel="stylesheet"/>
-<script src="js/jquery.lightbox-0.5.min.js"></script>
-
-
+<script src="jquery.cycle.lite.js"></script>
 <script type="text/javascript">
-$(function() {
-	$('#lateral a').lightBox({fixedNavigation:true});
+$(document).ready(function() {
+    $('#banner').cycle({
+		fx: 'fade'
+	});
 });
 </script>
 </head>
@@ -21,7 +20,7 @@ $(function() {
     <div id="topo">
 		<div id="logo">
 			<a href="index.html">
-				<img src="imagens/logo12.png" alt="Rainbow Clothes" />
+				<img src="imagens/logo12.png" alt="Maxsula Hotel" />
 			</a>
 		</div>
 		
@@ -44,19 +43,13 @@ $(function() {
 					Feminino
 					</a>
 				</li>
-				
-
-				<li>
-					<a href="calcados.html">
-					Calçados
-					</a>
-				</li>
-
-				<li>
+							<li>
 					<a href="contato.html">
 					Contato
 					</a>
 				</li>
+				
+
 			</ul>
 		</div> <!-- fim do menu -->
 		</div>
@@ -64,47 +57,33 @@ $(function() {
 	
     <div id="conteudo">    
         <div id="subConteudo">
+			<div id="banner">
+				<img src="img/fachada.jpg" />
+				<img src="img/recepcao.jpg"/>
+				<img src="img/acomodacoes.jpg"/>
+				<img src="img/recepcao2.jpg"/>
+			</div> <!-- fim do banner -->
+			
 			<!-- -->
-			<div id="texto_grande">
+			<div id="texto_1">
 				<h2></h2>
 				<p></p>
-				
-				<p></p>
 		    </div> <!-- fim do texto -->
-			<div id="galeria">
-			<div id="texto_1">
-				<a href="imagens/img4_g.jpg" >
-					<img src="imagens/img4_p.jpg"/>
-				</a>
-				<br/><br/>
-				<a href="imagens/img5_g.jpg" >
-					<img src="imagens/img5_p.jpg"/>
-				</a>
-			</div>
+			<!-- -->
 			<div id="texto_2">
-				<a href="imagens/img6_g.jpg" >
-					<img src="imagens/img6_p.jpg"/>
-				</a>
-				<br/><br/>
-				<a href="imagens/img7_g.jpg" >
-					<img src="imagens/img7_p.jpg"/>
-				</a>
-			</div>
+				<h2></h2>
+				<p></p>
+			</div> <!-- fim do texto -->
+			<!-- -->
 			<div id="texto_3">
-				<a href="imagens/img9_g.jpg" >
-					<img src="imagens/img9_p.jpg"/>
-				</a>
-				<br/><br/>
-				<a href="imagens/img13_g.jpg" >
-					<img src="imagens/img13_p.jpg"/>
-				</a>
-			</div>
-			</div>
-      </div> <!-- fim do subconteudo -->
+				<h2></h2>
+				<p></p>
+			</div> <!-- fim do texto -->
+			
+        </div> <!-- fim do subconteudo -->
 		
     </div> <!-- fim do conteudo -->
 	</div> <!-- fim de pagina -->
-	
 	
 	<div id="final">
 		<div id="conteudoFinal">

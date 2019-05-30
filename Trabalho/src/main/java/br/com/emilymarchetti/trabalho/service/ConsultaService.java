@@ -11,7 +11,7 @@ public class ConsultaService {
 
     private ConsultaRepository consultaRepository = new ConsultaRepository();
 
-    public void inicar(Consulta consulta){
+    public void iniciar(Consulta consulta){
         if (consulta.getId() == null){
             consultaRepository.criar(consulta);
         }else{
@@ -35,8 +35,14 @@ public class ConsultaService {
         return consultaRepository.buscarTodos();
     }
 
-    public void agendarRetorno(LocalDateTime dataHora){
-        agendarRetorno(dataHora);
+    public void agendarRetorno(LocalDateTime dataHora, Consulta consulta){
+        Agendamento agendamento = new Agendamento(consulta.getPaciente(),consulta.getMedico(),dataHora);
+        AgendamentoService agendamentoService = new AgendamentoService();
+        if(agendamentoService.validarMedicoDisponivel(consulta.getMedico(),dataHora)){
+            agendamento.setMedico(consulta.getMedico());
+            agendamento.setPaciente(consulta.getPaciente());
+            agendamento.setDataHora(dataHora);
+            agendamentoService.criar(agendamento);
+        }
     }
-
 }

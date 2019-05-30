@@ -1,8 +1,11 @@
 package br.com.emilymarchetti.trabalho.service;
 
 import br.com.emilymarchetti.trabalho.model.Agendamento;
+import br.com.emilymarchetti.trabalho.model.Consulta;
 import br.com.emilymarchetti.trabalho.model.Medico;
+import br.com.emilymarchetti.trabalho.model.Paciente;
 import br.com.emilymarchetti.trabalho.repository.AgendamentoRepository;
+import br.com.emilymarchetti.trabalho.repository.PacienteRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,6 +24,7 @@ public class AgendamentoService {
 
     public void reagendar(Agendamento agendamento, LocalDateTime dataHora){
         agendamento.reagendar(agendamento, dataHora);
+        agendamentoRepository.atualizar(agendamento);
     }
 
     public void deletar(Long id){
@@ -35,7 +39,13 @@ public class AgendamentoService {
         return agendamentoRepository.buscarTodos();
     }
 
-    public void validarMedicoDisponivel(Medico medico, LocalDateTime dataHora){
-       //implementar
+    public boolean validarMedicoDisponivel(Medico medico, LocalDateTime dataHora){
+        List<Agendamento> agendamentoMedico = agendamentoRepository.buscarTodos();
+        for (Agendamento agendamentos: agendamentoMedico) {
+            if(agendamentos.getDataHora() == dataHora && agendamentos.getMedico() == medico){
+                return true;
+            }
+        }
+        return false;
     }
 }

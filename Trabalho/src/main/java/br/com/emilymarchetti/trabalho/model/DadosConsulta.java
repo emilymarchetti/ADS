@@ -8,6 +8,12 @@ public abstract class DadosConsulta extends Entidade {
     private Medico medico;
     private LocalDateTime dataHora;
 
+    public DadosConsulta(Paciente paciente, Medico medico, LocalDateTime dataHora) {
+        this.paciente = paciente;
+        this.medico = medico;
+        this.dataHora = dataHora;
+    }
+
     public Paciente getPaciente() {
         return paciente;
     }

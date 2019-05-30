@@ -8,10 +8,9 @@
 <link href="css/jquery.lightbox-0.5.css" rel="stylesheet"/>
 <script src="js/jquery.lightbox-0.5.min.js"></script>
 
-
 <script type="text/javascript">
 $(function() {
-	$('#galeria a').lightBox({fixedNavigation:true});
+	$('#lateral a').lightBox({fixedNavigation:true});
 });
 </script>
 </head>
@@ -28,7 +27,8 @@ $(function() {
 		<div id="fundomenu">
 		<div id="menu">
 			<ul>
-					<li>
+			
+				<li>
 					<a href="inicio.html">
 					Inicio</a>
 				</li>
@@ -42,13 +42,6 @@ $(function() {
 				<li>
 					<a href="feminino.html">
 					Feminino
-					</a>
-				</li>
-				
-
-				<li>
-					<a href="calcados.html">
-					Calçados
 					</a>
 				</li>
 
@@ -66,42 +59,25 @@ $(function() {
     <div id="conteudo">    
         <div id="subConteudo">
 			<!-- -->
-			<div id="texto_grande">
-				<h2></h2>
-				<p></p>
-				
-				<p></p>
+			<div id="formulario">
+				<h2>Contato</h2>
+				<!-- <form method="post" action="contato.php"> -->
+				<form method="post" action= "" >
+					<input type="text" id="nome" name="nome" size="35" placeholder="Nome" required="required"/><br />
+					<input type="email" id="email" name="email" size="35" placeholder="Email" required="required"/><br>
+					<input type="text" id="titulo" name="titulo" size="35" placeholder="Titulo" required="required"/><br />
+					<textarea name="texto" id="texto" cols="60" rows="10" placeholder="Mensagem" required="required"></textarea>
+					<button class="botao" type="submit"/>Enviar</button>
+					<button class="botao" type="reset"/>Apagar</button>
+				</form>
+			
 		    </div> <!-- fim do texto -->
-			<div id="galeria">
-			<div id="texto_1">
-				<a href="imagens/feminino1_1.jpg" >
-					<img src="imagens/feminino1_2.jpg"/>
-				</a>
-				<br/><br/>
-				<a href="imagens/feminino2_1.jpg" >
-					<img src="imagens/feminino2_2.jpg"/>
-				</a>
-			</div>
-			<div id="texto_2">
-				<a href="imagens/feminino3_1.jpg" >
-					<img src="imagens/feminino3_2.jpg"/>
-				</a>
-				<br/><br/>
-				<a href="imagens/feminino4_1.jpg" >
-					<img src="imagens/feminino4_2.jpg"/>
-				</a>
-			</div>
-			<div id="texto_3">
-				<a href="imagens/feminino5_1.jpg" >
-					<img src="imagens/feminino5_2.jpg"/>
-				</a>
-				<br/><br/>
-				<a href="imagens/feminino6_1.jpg" >
-					<img src="imagens/feminino6_2.jpg"/>
-				</a>
-			</div>
-			</div>
-      </div> <!-- fim do subconteudo -->
+			
+			<div id="lateral">
+				<p></p>
+			</div> <!-- fim da lateral -->
+			
+        </div> <!-- fim do subconteudo -->
 		
     </div> <!-- fim do conteudo -->
 	</div> <!-- fim de pagina -->
