@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+body {
+  background:url("Uu6ZbnE.jpg") 20% no-repeat; 
+  background-size: 400px 300px;
+  background-position: left top;
+  background-attachment: fixed;
+}
+
+ h1 {
+  color: #3A5FCD;
+  margin-right: 730px;
+  margin-top: 75px;
+  transform: rotate(-25deg);
+}
+
+p {
+	margin-left: 400px;
+	font-size: : 20px; 
+	color: #000000;
+}
+
+.arial {
+	font-family: Arial;
+}
+
+.center {
+   text-align: center;
+}
